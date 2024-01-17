@@ -1,0 +1,5 @@
+@base=http://localhost:3010
+
+###
+# Get NATS Server Information
+GET {{base}}/nats-server/info

@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "module": "NodeNext",
+        "target": "ESNext",
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
+        "declaration": true,
+        "moduleResolution": "NodeNext",
+        "esModuleInterop": true,
+        "strict": true,
+        "outDir": "dist",
+        "rootDir": "./src",
+        "lib": ["ESNext", "DOM"]
+    },
+    "references": [],
+    "include": ["src/**/*"],
+    "exclude": ["src/seed.ts"]
+}

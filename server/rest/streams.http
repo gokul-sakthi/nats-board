@@ -1,0 +1,44 @@
+@base=http://localhost:3010
+
+###
+# Get list of streams
+GET {{base}}/streams
+
+###
+# Get list of streams with a specific subject
+GET {{base}}/streams?subject=yourSubjectHere
+
+###
+# Add a new stream
+POST {{base}}/streams
+Content-Type: application/json
+
+{
+    "name": "streamName",
+    "description": "Stream Description",
+    "subjects": ["subject1", "subject2"]
+}
+
+###
+# Update an existing stream
+PUT {{base}}/streams/streamName
+Content-Type: application/json
+
+{
+    "config": {
+        "description": "Updated Description",
+        "subjects": ["updatedSubject1", "updatedSubject2"]
+        // Other configurable fields here
+    }
+}
+
+###
+# Purge messages from a stream
+POST {{base}}/streams/streamName/purge
+Content-Type: application/json
+
+{
+    "subject": "subjectToPurge",
+    "seq": 12345,
+    "keep": 100
+}

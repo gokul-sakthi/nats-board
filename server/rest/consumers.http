@@ -1,0 +1,24 @@
+@base=http://localhost:3010
+
+###
+# Get list of consumers
+GET {{base}}/consumers?streamName=yourStreamName&durableName=yourDurableName
+
+###
+# Update a consumer
+PUT {{base}}/consumers?streamName=yourStreamName&durableName=yourDurableName
+Content-Type: application/json
+
+{
+    "config": {
+        // Updated configuration here
+    }
+}
+
+###
+# Get messages from a consumer
+GET {{base}}/consumers/messages?streamName=yourStreamName&durableName=yourDurableName&startSequence=123&filterSubjects=yourFilterSubjects
+
+###
+# Delete a consumer
+DELETE {{base}}/consumers?streamName=yourStreamName&durableName=yourDurableName
